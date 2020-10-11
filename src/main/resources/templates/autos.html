@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Thymeleaf Hello World Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Spring Boot Web Thymeleaf About Page Example</h1>
+        <h2>
+            <span th:text="'Car list'"></span>
+        </h2>
+    </div>
+    <div>
+        <table>
+            <tbody>
+            <tr th:if="${autos.empty}">
+                <td colspan="2"> No Cars Available</td>
+            </tr>
+            <th:block th:each="auto : ${autos}">
+                <tr>
+                    <td><span th:text="${auto.brand}"> Brand </span></td>
+                    <td><span th:text="${auto.model}"> Model </span></td>
+                    <td><span th:text="${auto.vin}"> VIN </span></td>
+                    <td><span th:text="${auto.plateNumber}"> Registration number </span></td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>
